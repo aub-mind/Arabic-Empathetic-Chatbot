@@ -1,6 +1,8 @@
 # Arabic-Empathetic-Chatbot
 
 
+<img align="center" width="600"  src="fig/empathetic-agent.png" alt="empathetic-agent">
+
 This repository contains a dataset of ~38K samples of open-domain utterances and empathetic responses in Modern Standard Arabic (MSA).
 
 The dataset has been published in the paper [Empathy-driven Arabic Conversational Chatbot](https://www.aclweb.org/anthology/2020.wanlp-1.6/).
