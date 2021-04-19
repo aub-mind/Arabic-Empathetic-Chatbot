@@ -1,13 +1,15 @@
 # Arabic-Empathetic-Chatbot
 
 
+<img align="center" width="600"  src="fig/empathetic-agent.png" alt="empathetic-agent">
+
 This repository contains a dataset of ~38K samples of open-domain utterances and empathetic responses in Modern Standard Arabic (MSA).
 
 The dataset has been published in the paper [Empathy-driven Arabic Conversational Chatbot](https://www.aclweb.org/anthology/2020.wanlp-1.6/).
 
-The repository also contains the code for the state-of-the-art BERT2BERT model for Arabic response generation, published in the paper [Empathetic BERT2BERT Conversational Model: Learning Arabic Language Generation with Little Data](https://www.aclweb.org/anthology/2021.wanlp-1.17/)
+The repository also contains the code for the state-of-the-art BERT2BERT model for Arabic response generation, published in the paper [Empathetic BERT2BERT Conversational Model: Learning Arabic Language Generation with Little Data](https://www.aclweb.org/anthology/2021.wanlp-1.17/).
 
-## If you use this dataset, make sure to cite us:
+## If you use our dataset, make sure to cite our [paper](https://www.aclweb.org/anthology/2020.wanlp-1.6/):
 ```
 @inproceedings{naous-etal-2020-empathy,
     title = "Empathy-driven {A}rabic Conversational Chatbot",
@@ -22,7 +24,7 @@ The repository also contains the code for the state-of-the-art BERT2BERT model f
 }
 ```
 
-## If you use our model, make sure to cite us:
+## If you use our model, make sure to cite our [paper](https://www.aclweb.org/anthology/2021.wanlp-1.17/):
 ```
 @inproceedings{naous-etal-2021-empathetic,
     title = "Empathetic {BERT}2{BERT} Conversational Model: Learning {A}rabic Language Generation with Little Data",
