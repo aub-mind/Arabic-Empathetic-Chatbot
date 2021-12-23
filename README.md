@@ -9,6 +9,54 @@ The dataset has been published in the paper [Empathy-driven Arabic Conversationa
 
 The repository also contains the code for the state-of-the-art BERT2BERT model for Arabic response generation, published in the paper [Empathetic BERT2BERT Conversational Model: Learning Arabic Language Generation with Little Data](https://www.aclweb.org/anthology/2021.wanlp-1.17/).
 
+## Using our pre-trained BERT2BERT model
+
+You can easily use our pre-trained [BERT2BERT model](https://www.aclweb.org/anthology/2021.wanlp-1.17/) from huggingface using the EncoderDecoderModel class:
+
+```python
+from transformers import EncoderDecoderModel, AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("tareknaous/bert2bert-empathetic-response-msa")
+model = EncoderDecoderModel.from_pretrained("tareknaous/bert2bert-empathetic-response-msa")
+
+model.to("cuda")
+model.eval()
+```
+
+Use the following function to perform prediction and post-processing:
+
+```python
+def generate_response(text):
+  text_clean = arabert_prep.preprocess(text)
+  inputs = tokenizer.encode_plus(text_clean,return_tensors='pt')
+  outputs = model.generate(input_ids = inputs.input_ids.to("cuda"),
+                   attention_mask = inputs.attention_mask.to("cuda"),
+                   num_beams=1,
+                   do_sample = True,
+                   min_length=10,
+                   top_k = 50,
+                   temperature = 1,
+                   length_penalty =2)
+  preds = tokenizer.batch_decode(outputs) 
+  response = str(preds)
+  response = response.replace("\'", '')
+  response = response.replace("[[CLS]", '')
+  response = response.replace("[SEP]]", '')
+  response = str(arabert_prep.desegment(response))
+  return response
+```
+
+Generated example: 
+
+```python
+input =  "الله يلعن هالبلد انقطعت الكهربا !"
+generate_response(input)
+
+#Generated response
+'يا رجل ، هل اتصلت بهم لإعلامهم بذلك ؟ '
+```
+
+**Note**: Make sure to play around with the sampler as it will influence the quality of your results heavily.
+
 ## If you use our dataset, make sure to cite our [paper](https://www.aclweb.org/anthology/2020.wanlp-1.6/):
 ```
 @inproceedings{naous-etal-2020-empathy,
