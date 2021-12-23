@@ -21,6 +21,16 @@ model = EncoderDecoderModel.from_pretrained("tareknaous/bert2bert-empathetic-res
 model.to("cuda")
 model.eval()
 ```
+Install some dependencies for pre-processing MSA text using AraBERT preprocessor
+
+```python
+!pip install pyarabic
+!pip install farasapy
+!git clone https://github.com/aub-mind/arabert
+
+from arabert.preprocess import ArabertPreprocessor
+arabert_prep = ArabertPreprocessor(model_name="bert-base-arabert", keep_emojis=False)
+```
 
 Use the following function to perform prediction and post-processing:
 
