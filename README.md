@@ -9,6 +9,11 @@ The dataset has been published in the paper [Empathy-driven Arabic Conversationa
 
 The repository also contains the code for the state-of-the-art BERT2BERT model for Arabic response generation, published in the paper [Empathetic BERT2BERT Conversational Model: Learning Arabic Language Generation with Little Data](https://www.aclweb.org/anthology/2021.wanlp-1.17/).
 
+## Try out Hugginface Spaces demo
+
+You can directly try out the model which is hosted on Spaces permanently:
+https://huggingface.co/spaces/tareknaous/arabic-empathetic-response-generation
+
 ## Using our pre-trained BERT2BERT model
 
 You can easily use our pre-trained [BERT2BERT model](https://www.aclweb.org/anthology/2021.wanlp-1.17/) from huggingface using the EncoderDecoderModel class:
