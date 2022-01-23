@@ -45,12 +45,11 @@ def generate_response(text):
   inputs = tokenizer.encode_plus(text_clean,return_tensors='pt')
   outputs = model.generate(input_ids = inputs.input_ids.to("cuda"),
                    attention_mask = inputs.attention_mask.to("cuda"),
-                   num_beams=1,
                    do_sample = True,
                    min_length=10,
-                   top_k = 50,
-                   temperature = 1,
-                   length_penalty =2)
+                   top_k = 0,
+                   top_p = 0.9,
+                   temperature = 0.5)
   preds = tokenizer.batch_decode(outputs) 
   response = str(preds)
   response = response.replace("\'", '')
@@ -63,14 +62,17 @@ def generate_response(text):
 Generated example: 
 
 ```python
-input =  "! الله يلعن هالبلد انقطعت الكهربا"
+input =  "! الله يلعن هالبلد انقطعت الكهرباء"
 generate_response(input)
 
 #Generated response
 'يا رجل ، هل اتصلت بهم لإعلامهم بذلك ؟ '
 ```
 
-**Note**: Make sure to play around with the sampler as it will influence the quality of your results heavily.
+**Note**: Make sure to play around with the sampling techniques (top-k or top-p) as they heavily influence the quality of your results. \
+
+Refer to this excellent blog for further infomation on sampling: \
+https://huggingface.co/blog/how-to-generate
 
 ## If you use our dataset, make sure to cite our [paper](https://www.aclweb.org/anthology/2020.wanlp-1.6/):
 ```
