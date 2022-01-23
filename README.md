@@ -11,7 +11,7 @@ The repository also contains the code for the state-of-the-art BERT2BERT model f
 
 ## Demo
 
-You can directly try out the model which is hosted on Hugginface Spaces permanently: \
+You can directly try out the model which is hosted on Huggingface Spaces permanently: \
 https://huggingface.co/spaces/tareknaous/arabic-empathetic-response-generation
 
 ## Using our pre-trained BERT2BERT model
