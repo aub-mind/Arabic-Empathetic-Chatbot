@@ -71,7 +71,7 @@ generate_response(input)
 
 **Note**: Make sure to play around with the sampling techniques (top-k or top-p) as they heavily influence the quality of your results. \
 
-Refer to this excellent blog for further infomation on sampling: \
+Refer to this excellent blog for further infomation on sampling: 
 https://huggingface.co/blog/how-to-generate
 
 ## If you use our dataset, make sure to cite our [paper](https://www.aclweb.org/anthology/2020.wanlp-1.6/):
