@@ -69,7 +69,7 @@ generate_response(input)
 'يا رجل ، هل اتصلت بهم لإعلامهم بذلك ؟ '
 ```
 
-**Note**: Make sure to play around with the sampling techniques (top-k or top-p) as they heavily influence the quality of your results. \
+**Note**: Make sure to play around with the sampling techniques (top-k or top-p) as they heavily influence the quality of your results.
 
 Refer to this excellent blog for further infomation on sampling: 
 https://huggingface.co/blog/how-to-generate
