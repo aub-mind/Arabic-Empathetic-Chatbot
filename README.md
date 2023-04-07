@@ -62,7 +62,7 @@ def generate_response(text):
 Generated example: 
 
 ```python
-input =  "! الله يلعن هالبلد انقطعت الكهرباء"
+input =  "!  انقطعت الكهرباء"
 generate_response(input)
 
 #Generated response
